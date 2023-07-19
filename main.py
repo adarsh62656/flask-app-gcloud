@@ -25,24 +25,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def hello():
-    """Return a friendly HTTP greeting."""
-    mydb = mysql.connector.connect(
-    host="34.138.180.251",
-    user="fg",
-    password="gnu123"
-    )
-
-    if mydb.is_connected():
-            db_Info = mydb.get_server_info()
-            print("Connected to MySQL Server version ", db_Info)
-            cursor = mydb.cursor()
-            cursor.execute("show databases;")
-            record = cursor.fetchall()
-            x=''
-            for i in record:
-                for j in i:
-                    x=x+str(j)+" , "
-    return x[:-2]
+   return "Hello"
 
 
 if __name__ == '__main__':
